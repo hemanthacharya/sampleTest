@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.oracle.dc</groupId>
+    <artifactId>dc-project</artifactId>
+    <version>1.0</version>
+    <organization>
+        <name>Oracle Corporation</name>
+        <url>http://www.oracle.com/</url>
+    </organization>
+    <name>DC Project</name>
+    <description>Project with vunlerability against which the dependency checker would be run.</description>
+    <packaging>jar</packaging>
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework.security</groupId>
+            <artifactId>spring-security-core</artifactId>
+            <version>4.2.0.RELEASE</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-core</artifactId>
+            <version>4.3.1.RELEASE</version>
+        </dependency>
+    </dependencies>
+    <build>  
+        <plugins>  
+            <plugin>  
+                <groupId>org.codehaus.mojo</groupId>  
+                <artifactId>exec-maven-plugin</artifactId>  
+                <version>1.1.1</version>  
+                <executions>  
+                    <execution>  
+                        <phase>test</phase>  
+                        <goals>  
+                            <goal>java</goal>  
+                        </goals>  
+                        <configuration>  
+                            <mainClass>com.oracle.dc.HelloDependencyChecker</mainClass>  
+                        </configuration>  
+                    </execution>  
+                </executions>  
+            </plugin>  
+        </plugins>  
+    </build> 
+</project>
+  
